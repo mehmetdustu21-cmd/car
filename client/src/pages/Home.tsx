@@ -230,17 +230,22 @@ One Car Care olarak, aracınızın her köşesine ulaşan, detaylı ve titiz bir
           loop
           className="absolute inset-0 w-full h-full object-cover"
           src="https://carwaxaquaflorya.com.tr/wp-content/uploads/2025/12/carwax-kazali.mp4"
+          onLoadedMetadata={(e) => {
+            const video = e.currentTarget as HTMLVideoElement;
+            video.playbackRate = 1;
+          }}
+          style={{ objectPosition: 'center' }}
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="container relative z-10 h-full flex items-center">
           <div className="max-w-3xl mx-auto text-center text-white">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6 leading-tight tracking-tight px-4">
               {t('hero.title')}
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 mb-10 leading-relaxed font-light">
+            <p className="text-base sm:text-lg md:text-2xl text-blue-100 mb-6 sm:mb-10 leading-relaxed font-light px-4">
               {t('hero.subtitle')}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
               <Button
                 size="lg"
                 className="bg-white text-blue-600 hover:bg-blue-50 font-semibold shadow-lg hover:shadow-xl transition-all"
@@ -263,13 +268,13 @@ One Car Care olarak, aracınızın her köşesine ulaşan, detaylı ve titiz bir
       </section>
 
       {/* Services Section */}
-      <section className="py-20 md:py-32 bg-gradient-to-b from-white to-gray-50">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+      <section className="py-12 md:py-32 bg-gradient-to-b from-white to-gray-50">
+        <div className="container px-4 md:px-0">
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 md:mb-4 tracking-tight">
               {t('services.title')}
             </h2>
-            <p className="text-gray-600 text-lg font-light max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 font-light max-w-2xl mx-auto">
               {t('services.subtitle')}
             </p>
           </div>
@@ -303,23 +308,23 @@ One Car Care olarak, aracınızın her köşesine ulaşan, detaylı ve titiz bir
       </section>
 
       {/* Why Us Section */}
-      <section className="py-20 md:py-32 bg-gray-50">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+      <section className="py-12 md:py-32 bg-gray-50">
+        <div className="container px-4 md:px-0">
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 md:mb-4 tracking-tight">
               {t('whyus.title')}
             </h2>
-            <p className="text-gray-600 text-lg font-light max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 font-light max-w-2xl mx-auto">
               {t('whyus.subtitle')}
             </p>
           </div>
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {features.map((feature, idx) => (
-              <div key={idx} className="group bg-white p-7 rounded-xl border border-gray-100 hover:shadow-lg hover:border-blue-200 transition-all duration-300 hover:-translate-y-1">
-                <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+              <div key={idx} className="group bg-white p-5 md:p-7 rounded-xl border border-gray-100 hover:shadow-lg hover:border-blue-200 transition-all duration-300 hover:-translate-y-1">
+                <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2 md:mb-3 group-hover:text-blue-600 transition-colors">
                   {t(feature.titleKey)}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed font-light">
+                <p className="text-gray-600 text-xs md:text-sm leading-relaxed font-light">
                   {t(feature.descKey)}
                 </p>
               </div>
@@ -331,17 +336,17 @@ One Car Care olarak, aracınızın her köşesine ulaşan, detaylı ve titiz bir
 
 
       {/* Gallery Section */}
-      <section className="py-20 md:py-32 bg-white">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+      <section className="py-12 md:py-32 bg-white">
+        <div className="container px-4 md:px-0">
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 md:mb-4 tracking-tight">
               {t('gallery.title')}
             </h2>
-            <p className="text-gray-600 text-lg font-light max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 font-light max-w-2xl mx-auto">
               {t('gallery.subtitle')}
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
             {['/gallery-1-plate.png', '/gallery-2-foam.png', '/gallery-3-plate.png'].map((src, idx) => (
               <div
                 key={idx}
@@ -359,38 +364,38 @@ One Car Care olarak, aracınızın her köşesine ulaşan, detaylı ve titiz bir
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 md:py-32 bg-gray-50">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+      <section className="py-12 md:py-32 bg-gray-50">
+        <div className="container px-4 md:px-0">
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 md:mb-4 tracking-tight">
               {t('contact.title')}
             </h2>
-            <p className="text-gray-600 text-lg font-light max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 font-light max-w-2xl mx-auto">
               {t('contact.subtitle')}
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <div className="bg-white p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-              <h3 className="font-bold text-gray-900 mb-2">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-8">
+            <div className="bg-white p-5 md:p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="font-bold text-gray-900 mb-2 text-sm md:text-base">
                 {t('contact.address')}
               </h3>
-              <p className="text-gray-600 text-sm mb-4">
+              <p className="text-gray-600 text-xs md:text-sm mb-3 md:mb-4">
                 {t('contact.addressValue')}
               </p>
-              <h3 className="font-bold text-gray-900 mb-2">
+              <h3 className="font-bold text-gray-900 mb-2 text-sm md:text-base">
                 {t('contact.phone')}
               </h3>
-              <p className="text-gray-600 text-sm mb-4">
+              <p className="text-gray-600 text-xs md:text-sm mb-3 md:mb-4">
                 {t('contact.phoneValue')}
               </p>
-              <h3 className="font-bold text-gray-900 mb-2">
+              <h3 className="font-bold text-gray-900 mb-2 text-sm md:text-base">
                 {t('contact.hours')}
               </h3>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600 text-xs md:text-sm">
                 {t('contact.hoursValue')}
               </p>
             </div>
-            <div className="w-full rounded-xl overflow-hidden border border-gray-100 shadow-sm" style={{ height: '400px' }}>
+            <div className="w-full rounded-xl overflow-hidden border border-gray-100 shadow-sm" style={{ height: '300px', minHeight: '300px' }}>
               <MapView
                 initialCenter={{ lat: 41.0082, lng: 28.7411 }}
                 initialZoom={16}
